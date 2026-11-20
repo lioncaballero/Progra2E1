@@ -1,0 +1,135 @@
+<mxfile host="app.diagrams.net" modified="2026-11-23T10:00:00.000Z" agent="Draw.io UML Generator" version="24.7.17" type="device">
+  <diagram id="UML-ISWZ1103-Grupo8" name="Diagrama de Clases UML - Grupo 8">
+    <mxGraphModel dx="1680" dy="1050" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1650" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="pkg_modelo" value="package modelo" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=130;tabHeight=28;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;align=left;spacingLeft=14;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="30" y="30" width="840" height="960" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_producto" value="&lt;i&gt;&amp;lt;&amp;lt;abstract&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;&lt;i&gt;Producto&lt;/i&gt;&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="210" y="80" width="480" height="390" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_producto_attr" value="- codigo: String&lt;br&gt;- nombre: String&lt;br&gt;- cantidad: int&lt;br&gt;- precioUnitario: double&lt;br&gt;- stockMinimo: int" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="cls_producto">
+          <mxGeometry y="44" width="480" height="92" as="geometry"/>
+        </mxCell>
+        <mxCell id="sep_prod" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#d6b656;" vertex="1" parent="cls_producto">
+          <mxGeometry y="136" width="480" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_producto_meth" value="+ Producto(codigo: String, nombre: String, cantidad: int, precioUnitario: double, stockMinimo: int)&lt;br&gt;+ getCodigo(): String&lt;br&gt;+ setCodigo(codigo: String): void&lt;br&gt;+ getNombre(): String&lt;br&gt;+ setNombre(nombre: String): void&lt;br&gt;+ getCantidad(): int&lt;br&gt;+ setCantidad(cantidad: int): void&lt;br&gt;+ getPrecioUnitario(): double&lt;br&gt;+ setPrecioUnitario(precioUnitario: double): void&lt;br&gt;+ getStockMinimo(): int&lt;br&gt;+ setStockMinimo(stockMinimo: int): void&lt;br&gt;&lt;i&gt;+ calcularValorTotal(): double&lt;/i&gt;&lt;br&gt;&lt;i&gt;+ verificarEstado(): String&lt;/i&gt;&lt;br&gt;&lt;i&gt;+ getTipoProducto(): String&lt;/i&gt;&lt;br&gt;+ toString(): String" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="cls_producto">
+          <mxGeometry y="144" width="480" height="246" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_perecedero" value="&lt;b&gt;ProductoPerecedero&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="540" width="380" height="255" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_perecedero_attr" value="- fechaVencimiento: LocalDate&lt;br&gt;- temperaturaMaxC: double" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="cls_perecedero">
+          <mxGeometry y="30" width="380" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="sep_per" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#82b366;" vertex="1" parent="cls_perecedero">
+          <mxGeometry y="76" width="380" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_perecedero_meth" value="+ ProductoPerecedero(cod, nom, cant, precio, min, fechaVenc, tempMax)&lt;br&gt;+ getFechaVencimiento(): LocalDate&lt;br&gt;+ setFechaVencimiento(fecha: LocalDate): void&lt;br&gt;+ getTemperaturaMaxC(): double&lt;br&gt;+ setTemperaturaMaxC(temp: double): void&lt;br&gt;+ calcularDiasParaVencer(): long&lt;br&gt;+ calcularValorTotal(): double&lt;br&gt;+ verificarEstado(): String&lt;br&gt;+ getTipoProducto(): String" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="cls_perecedero">
+          <mxGeometry y="84" width="380" height="171" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_noperecedero" value="&lt;b&gt;ProductoNoPerecedero&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="460" y="540" width="390" height="255" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_noperecedero_attr" value="- mesesGarantia: int&lt;br&gt;- ubicacionPasillo: String" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="cls_noperecedero">
+          <mxGeometry y="30" width="390" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="sep_noper" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#82b366;" vertex="1" parent="cls_noperecedero">
+          <mxGeometry y="76" width="390" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_noperecedero_meth" value="+ ProductoNoPerecedero(cod, nom, cant, precio, min, garantia, pasillo)&lt;br&gt;+ getMesesGarantia(): int&lt;br&gt;+ setMesesGarantia(meses: int): void&lt;br&gt;+ getUbicacionPasillo(): String&lt;br&gt;+ setUbicacionPasillo(pasillo: String): void&lt;br&gt;+ calcularValorTotal(): double&lt;br&gt;+ verificarEstado(): String&lt;br&gt;+ getTipoProducto(): String" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="cls_noperecedero">
+          <mxGeometry y="84" width="390" height="171" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_exception" value="&amp;lt;&amp;lt;exception&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;InventarioException&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="260" y="840" width="360" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_exception_attr" value="" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="cls_exception">
+          <mxGeometry y="40" width="360" height="16" as="geometry"/>
+        </mxCell>
+        <mxCell id="sep_exc" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#b85450;" vertex="1" parent="cls_exception">
+          <mxGeometry y="56" width="360" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_exception_meth" value="+ InventarioException(mensaje: String)" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="cls_exception">
+          <mxGeometry y="64" width="360" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_inh_1" value="extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;strokeWidth=1.5;strokeColor=#82b366;exitX=0.5;exitY=0;entryX=0.25;entryY=1;" edge="1" parent="1" source="cls_perecedero" target="cls_producto">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_inh_2" value="extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;strokeWidth=1.5;strokeColor=#82b366;exitX=0.5;exitY=0;entryX=0.75;entryY=1;" edge="1" parent="1" source="cls_noperecedero" target="cls_producto">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="pkg_negocio" value="package negocio" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=130;tabHeight=28;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=left;spacingLeft=14;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="930" y="30" width="680" height="580" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_igestor" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;IGestorInventario&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=42;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#db2777;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="80" width="480" height="195" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_igestor_meth" value="+ registrarProducto(producto: Producto): void&lt;br&gt;+ buscarPorCodigo(codigo: String): Producto&lt;br&gt;+ actualizarStock(codigo: String, deltaCantidad: int): void&lt;br&gt;+ eliminarProducto(codigo: String): boolean&lt;br&gt;+ listarTodos(): List&amp;lt;Producto&amp;gt;&lt;br&gt;+ obtenerAlertas(): List&amp;lt;Producto&amp;gt;&lt;br&gt;+ calcularValorTotalInventario(): double&lt;br&gt;+ calcularTotalUnidades(): int" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="cls_igestor">
+          <mxGeometry y="42" width="480" height="153" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_gestor" value="&lt;b&gt;GestorInventario&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="330" width="520" height="255" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_gestor_attr" value="+ PRESUPUESTO_MAXIMO: double = 15000.00&lt;br&gt;+ CAPACIDAD_MAXIMA_UNIDADES: int = 500&lt;br&gt;- inventario: List&amp;lt;Producto&amp;gt;" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="cls_gestor">
+          <mxGeometry y="30" width="520" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="sep_gestor" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673a6;" vertex="1" parent="cls_gestor">
+          <mxGeometry y="90" width="520" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_gestor_meth" value="+ GestorInventario()&lt;br&gt;+ registrarProducto(producto: Producto): void&lt;br&gt;- existeCodigo(codigo: String): boolean&lt;br&gt;+ buscarPorCodigo(codigo: String): Producto&lt;br&gt;+ actualizarStock(codigo: String, deltaCantidad: int): void&lt;br&gt;+ eliminarProducto(codigo: String): boolean&lt;br&gt;+ listarTodos(): List&amp;lt;Producto&amp;gt;&lt;br&gt;+ obtenerAlertas(): List&amp;lt;Producto&amp;gt;&lt;br&gt;+ calcularValorTotalInventario(): double&lt;br&gt;+ calcularTotalUnidades(): int" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="cls_gestor">
+          <mxGeometry y="98" width="520" height="157" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_impl" value="implements" style="endArrow=block;dashed=1;endSize=16;endFill=0;html=1;rounded=0;strokeWidth=1.5;strokeColor=#db2777;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="cls_gestor" target="cls_igestor">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_agg" value="1..* gestiona" style="endArrow=open;endSize=14;startArrow=diamondThin;startSize=16;startFill=0;html=1;rounded=0;strokeWidth=1.6;strokeColor=#7c3aed;exitX=0;exitY=0.35;entryX=1;entryY=0.5;" edge="1" parent="1" source="cls_gestor" target="cls_producto">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="pkg_interfaz" value="package interfaz" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=130;tabHeight=28;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;verticalAlign=top;align=left;spacingLeft=14;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="930" y="650" width="680" height="340" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_consola" value="&lt;b&gt;ConsolaInventario&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="960" y="700" width="370" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_consola_attr" value="- gestor: IGestorInventario&lt;br&gt;- scanner: Scanner" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="cls_consola">
+          <mxGeometry y="30" width="370" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="sep_con" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#666666;" vertex="1" parent="cls_consola">
+          <mxGeometry y="74" width="370" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_consola_meth" value="+ ConsolaInventario()&lt;br&gt;+ iniciar(): void&lt;br&gt;- mostrarMenu(): void&lt;br&gt;- procesarOpcion(opcion: int): void&lt;br&gt;+ registrarProductoUI(): void&lt;br&gt;- listarInventarioUI(): void&lt;br&gt;- actualizarStockUI(): void&lt;br&gt;- mostrarAlertasUI(): void&lt;br&gt;- eliminarProductoUI(): void&lt;br&gt;- cargarDatosIniciales(): void&lt;br&gt;+ ejecutarSuitePruebas(): void" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="cls_consola">
+          <mxGeometry y="82" width="370" height="178" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_main" value="&lt;b&gt;Main&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="775" width="210" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_main_attr" value="" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="cls_main">
+          <mxGeometry y="30" width="210" height="14" as="geometry"/>
+        </mxCell>
+        <mxCell id="sep_main" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#666666;" vertex="1" parent="cls_main">
+          <mxGeometry y="44" width="210" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls_main_meth" value="+ main(args: String[]): void" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="cls_main">
+          <mxGeometry y="52" width="210" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_dep_main" value="instancia" style="endArrow=open;dashed=1;endSize=14;html=1;rounded=0;strokeWidth=1.4;strokeColor=#475569;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="cls_main" target="cls_consola">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_dep_ui" value="usa interfaz" style="endArrow=open;dashed=1;endSize=14;html=1;rounded=0;strokeWidth=1.4;strokeColor=#475569;exitX=0;exitY=0.2;entryX=0;entryY=0.5;" edge="1" parent="1" source="cls_consola" target="cls_igestor">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="905" y="752"/>
+              <mxPoint x="905" y="178"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_dep_exc" value="lanza / captura" style="endArrow=open;dashed=1;endSize=14;html=1;rounded=0;strokeWidth=1.4;strokeColor=#b85450;exitX=0;exitY=0.85;entryX=1;entryY=0.5;" edge="1" parent="1" source="cls_consola" target="cls_exception">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
